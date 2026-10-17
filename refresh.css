@@ -1,0 +1,250 @@
+/* ==========================================================
+   Gulberg Motors — "soft & glass" refresh
+   · iOS liquid-glass header pills
+   · rounded gradient fleet cards with white info pill
+   · softer corners everywhere (no more boxy panels)
+   Loaded last, so it overrides earlier sheets.
+   ========================================================== */
+
+:root {
+  --r: 18px;        /* panels, inputs, tiles */
+  --r-md: 28px;     /* big containers */
+  --r-pill: 999px;
+  --glass-bg: linear-gradient(180deg, rgba(255,255,255,.16) 0%, rgba(255,255,255,.05) 48%, rgba(255,255,255,.08) 100%), rgba(28,29,31,.42);
+  --glass-edge: rgba(255,255,255,.20);
+}
+
+/* ---------- Buttons become pills ---------- */
+.btn { border-radius: var(--r-pill); }
+.seg { border-radius: var(--r-pill); }
+.seg span { border-radius: var(--r-pill); }
+.mbar { border-radius: 26px; }
+.mbar__btn { border-radius: 20px; }
+
+/* ==========================================================
+   1. Liquid-glass header (mirrored, like iOS)
+   ========================================================== */
+.hdr__bar::before { display: none; }
+.hdr__bar { gap: .75rem; }
+
+.glass {
+  position: relative; isolation: isolate;
+  background: var(--glass-bg);
+  backdrop-filter: blur(22px) saturate(180%); -webkit-backdrop-filter: blur(22px) saturate(180%);
+  border: 1px solid var(--glass-edge);
+  border-radius: var(--r-pill);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.38),     /* top specular edge */
+    inset 0 -1px 0 rgba(255,255,255,.07),    /* bottom rim light */
+    inset 0 0 18px rgba(255,255,255,.05),    /* inner glow */
+    0 10px 30px rgba(0,0,0,.35);
+}
+/* mirror sheen sweeping across the top half */
+.glass::before {
+  content: ""; position: absolute; inset: 1px; z-index: -1; border-radius: inherit; pointer-events: none;
+  background: linear-gradient(105deg, transparent 20%, rgba(255,255,255,.10) 38%, transparent 52%),
+              linear-gradient(180deg, rgba(255,255,255,.10), transparent 55%);
+}
+.hdr.is-scrolled .glass { background: linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,.04) 50%, rgba(255,255,255,.07)), rgba(18,18,20,.62); }
+
+/* brand pill */
+.brand.glass { padding: 6px 18px 6px 6px; min-height: 52px; gap: .65rem; }
+.brand.glass .brand__mark { width: 40px; height: 40px; }
+.brand__name { color: var(--text); }
+
+/* centre nav pill */
+.hdr__nav.glass { padding: 6px; gap: 2px; align-items: center; }
+.hdr__nav a {
+  position: relative; z-index: 1;
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 42px; padding: 0 18px; border-radius: var(--r-pill);
+  font-size: .9375rem; font-weight: 500; letter-spacing: 0; text-transform: none;
+  color: rgba(255,255,255,.86);
+  transition: color 300ms var(--ease), background 200ms ease;
+}
+.hdr__nav a::after { display: none; }
+.hdr__nav a:hover { color: #fff; background: rgba(255,255,255,.07); }
+.hdr__nav a.is-active { color: #111; background: transparent; }
+.hdr__home { padding: 0 14px !important; }
+.hdr__home .i { width: 19px; height: 19px; }
+.hdr__ind {
+  position: absolute; z-index: 0; top: 6px; bottom: 6px; left: 0; width: 0;
+  border-radius: var(--r-pill); background: #fff; opacity: 0;
+  box-shadow: 0 4px 14px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.08);
+  transition: transform 520ms cubic-bezier(.3,1.25,.4,1), width 520ms cubic-bezier(.3,1.25,.4,1), opacity 200ms ease;
+}
+
+/* right actions pill */
+.hdr__right.glass { padding: 6px; gap: 4px; }
+.hdr__right .icon-btn { width: 42px; height: 42px; }
+.hdr__right .icon-btn:hover { background: rgba(255,255,255,.1); color: #fff; }
+.hdr__cta.btn {
+  min-height: 42px; padding: 0 1.25rem; margin: 0;
+  background: #fff; color: #111; border-color: transparent; box-shadow: 0 4px 14px rgba(0,0,0,.25);
+  letter-spacing: .04em;
+}
+.hdr__cta.btn:hover { background: #ececec; transform: none; }
+.hdr__cta.btn::after { display: none; }
+
+@media (max-width: 639px) {
+  .brand.glass { padding-right: 14px; }
+  .brand.glass .brand__sub { display: none; }
+}
+@media (min-width: 1200px) {
+  .hdr__nav { display: flex; }
+}
+
+/* glass drawer */
+.drawer { background: rgba(14,14,15,.82); backdrop-filter: blur(28px) saturate(160%); -webkit-backdrop-filter: blur(28px) saturate(160%); }
+
+/* ==========================================================
+   2. Fleet cards — soft gradient card + white info pill
+   ========================================================== */
+.car {
+  padding: 12px; gap: 12px;
+  border-radius: 32px; border: 1px solid rgba(255,255,255,.08);
+  background:
+    radial-gradient(120% 80% at 0% 0%, rgba(255,255,255,.13), transparent 55%),
+    radial-gradient(90% 70% at 100% 100%, rgba(255,255,255,.07), transparent 60%),
+    linear-gradient(160deg, #303135 0%, #1b1c1e 55%, #26272a 100%);
+  box-shadow: 0 20px 50px rgba(0,0,0,.35);
+  overflow: visible; min-width: 0;
+}
+.car__info, .car__media { min-width: 0; }
+/* each card gets its own metallic tint so the grid isn't flat */
+.car:nth-child(2) { background: radial-gradient(120% 80% at 100% 0%, rgba(255,255,255,.13), transparent 55%), linear-gradient(200deg, #34353a 0%, #1c1d20 60%, #2a2b2f 100%); }
+.car:nth-child(3) { background: radial-gradient(120% 80% at 0% 100%, rgba(255,255,255,.12), transparent 55%), linear-gradient(20deg, #2f3033 0%, #1a1b1d 55%, #2c2d31 100%); }
+.car:nth-child(4) { background: radial-gradient(120% 80% at 50% 0%, rgba(255,255,255,.14), transparent 55%), linear-gradient(170deg, #36373b 0%, #1b1c1e 60%, #232427 100%); }
+.car:nth-child(5) { background: radial-gradient(120% 80% at 100% 100%, rgba(255,255,255,.12), transparent 55%), linear-gradient(140deg, #2d2e31 0%, #1a1b1d 55%, #303135 100%); }
+.car:hover { border-color: rgba(255,255,255,.16); box-shadow: 0 26px 60px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.04); }
+.car.is-arming { border-color: rgba(255,255,255,.28); }
+
+/* media area */
+.car__media {
+  position: relative; flex: 1 1 auto; aspect-ratio: 4 / 3; overflow: visible;
+  background: transparent; border-radius: 22px;
+  min-height: 0; /* keep the 4:3 box even for portrait photos (e.g. Range Rover) */
+}
+.car__media::after { display: none; }
+.tile {
+  position: relative; margin: 0; overflow: hidden; border-radius: 22px;
+  background: #111; isolation: isolate;
+}
+.tile--main { height: 100%; }
+.tile img { width: 100%; height: 100%; object-fit: cover; transition: transform 900ms var(--ease); }
+.car:hover .tile img { transform: scale(1.05); }
+.car .pill { top: 12px; left: 12px; }
+.car .pill--right { left: auto; right: 12px; }
+
+/* bento (featured) */
+.car__media--bento { display: grid; gap: 12px; }
+.tile--side, .tile--stat { display: none; }
+.tile--stat {
+  flex-direction: column; justify-content: flex-end; gap: .35rem; padding: 1.25rem 1.35rem;
+  background:
+    radial-gradient(140% 90% at 100% 0%, rgba(255,255,255,.16), transparent 50%),
+    linear-gradient(160deg, #1f2023 0%, #0d0d0e 100%);
+  border: 1px solid rgba(255,255,255,.07);
+}
+.tile--stat > * { position: relative; z-index: 1; }
+.tile--stat::after { /* light arc, confined to the empty top-right corner so it never crosses the text */
+  content: ""; position: absolute; z-index: 0; top: -150px; right: -110px; width: 260px; height: 260px; border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,.30); box-shadow: 0 0 24px rgba(255,255,255,.06); pointer-events: none;
+}
+.tile__k { font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.tile__big { font-family: var(--sans); font-weight: 700; font-size: clamp(2.75rem, 2rem + 2.5vw, 4rem); line-height: 1; color: #fff; letter-spacing: -.03em; }
+.tile__big small { font-size: .35em; font-weight: 600; color: var(--muted-2); margin-left: .25rem; letter-spacing: 0; }
+.tile__p { font-size: .8125rem; line-height: 1.5; color: var(--muted-2); max-width: 22rem; }
+
+/* white info pill */
+.car__info {
+  display: flex; align-items: center; gap: .875rem;
+  padding: 8px; border-radius: 40px;
+  background: #f4f4f5; color: #111;
+  box-shadow: 0 6px 20px rgba(0,0,0,.25), inset 0 1px 0 #fff;
+}
+.car__logo {
+  flex: none; display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, #3a3b3f, #0d0d0e 70%); color: #fff;
+  font-family: var(--serif); font-size: 1rem; font-weight: 500; letter-spacing: .02em;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.18);
+}
+.car__meta { flex: 1; min-width: 0; }
+.car .car__name, .car__name--sm {
+  font-family: var(--sans); font-size: 1.0625rem; font-weight: 600; line-height: 1.3; letter-spacing: -.01em; color: #111;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.car__sub { font-size: .875rem; color: #6b6d72; margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.car__go {
+  flex: none; display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%;
+  background: #e6e6e8; color: #111;
+  transition: background 220ms ease, color 220ms ease, transform 400ms var(--ease);
+}
+.car__go .i { width: 20px; height: 20px; stroke-width: 2; transition: transform 400ms var(--ease); }
+.car__go:hover, .car:hover .car__go { background: #111; color: #fff; }
+.car__go:hover .i { transform: rotate(45deg); }
+.car__go:active { transform: scale(.94); }
+
+/* hold-to-peek bar sits inside the rounded photo */
+.car__hold { border-radius: 0 0 22px 22px; height: 3px; }
+
+/* ---------- layout ---------- */
+@media (max-width: 767px) {
+  .car { flex-basis: min(88%, 400px); border-radius: 28px; }
+  .car__logo, .car__go { width: 42px; height: 42px; }
+  .car__logo { font-size: .875rem; }
+  .car__info { gap: .625rem; padding: 7px; }
+  .car .car__name { font-size: 1rem; white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; line-height: 1.25; }
+  .car__sub { font-size: .8125rem; }
+  .car__cat { display: none; }
+  .car__info { border-radius: 30px; }
+}
+@media (min-width: 768px) {
+  .fleet__track { gap: 1.5rem; }
+  .car--feature .car__media { aspect-ratio: auto; height: 420px; }
+  .car--feature .car__media--bento { grid-template-columns: 1.25fr 1fr; grid-template-rows: 1fr 1fr; }
+  .car--feature .tile--main { grid-row: 1 / 3; }
+  .car--feature .tile--side, .car--feature .tile--stat { display: flex; }
+}
+@media (min-width: 1024px) {
+  .car--feature .car__media { height: auto; min-height: 400px; }
+  .car--feature + .car .car__media { aspect-ratio: auto; flex: 1 1 240px; }
+}
+
+/* ==========================================================
+   3. Softer panels across the page (de-boxing)
+   ========================================================== */
+.book, .cta, .rating, .quote { border-radius: 32px; }
+.stat, .step, .req { border-radius: 24px; }
+.shot, .lime__figure { border-radius: 28px; }
+.collage__grid .shot img { border-radius: inherit; }
+.faq { border-top: 0; display: grid; gap: .75rem; }
+.faq details {
+  border: 1px solid var(--line); border-radius: 24px; padding: 0 1.25rem;
+  background: rgba(255,255,255,.02); transition: background 200ms ease, border-color 200ms ease;
+}
+.faq details[open] { background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.14); }
+.beat__stats { border-radius: 28px; overflow: hidden; }
+.specstrip li, .specs li { border-radius: var(--r-pill); }
+.field input, .field select { border-radius: 16px; }
+.icon-btn--soft { border-radius: 50%; }
+.marquee { border-radius: 0; }
+.lime__figure figcaption { border-radius: 0 0 28px 28px; }
+
+/* glass treatment for the floating mobile action bar too */
+.mbar {
+  background: var(--glass-bg); border-color: var(--glass-edge);
+  backdrop-filter: blur(22px) saturate(180%); -webkit-backdrop-filter: blur(22px) saturate(180%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 12px 40px rgba(0,0,0,.55);
+}
+.mbar__cta.btn { background: #fff; color: #111; border-color: transparent; }
+.mbar__cta.btn::after { display: none; }
+
+/* peek popup matches the rounder language */
+.peek { border-radius: 32px; border-color: rgba(255,255,255,.18); }
+.peek .peek__media { border-radius: 0; }
+.peek .peek__media img { border-radius: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hdr__ind { transition: opacity 1ms; }
+}

@@ -1,0 +1,127 @@
+/* ==========================================================
+   Hero — scroll-scrubbed LC300 frame sequence
+   ========================================================== */
+.scrub { position: relative; height: 260vh; background: var(--ink); }
+@media (min-width: 768px) { .scrub { height: 340vh; } }
+
+.scrub__sticky {
+  position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; isolation: isolate;
+}
+.scrub__canvas, .scrub__poster {
+  position: absolute; inset: 0; width: 100%; height: 100%; z-index: -2; display: block;
+}
+.scrub__poster { object-fit: cover; object-position: 60% 50%; transition: opacity 400ms ease; }
+.scrub.is-ready .scrub__poster { opacity: 0; }
+/* phones (portrait): crop the poster exactly like the canvas draws frame 1 (top band, car-centred)
+   so there is no "big then shrink" jump while frames are still loading */
+@media (max-aspect-ratio: 1/1) {
+  .scrub__poster {
+    height: 60%; bottom: auto; object-position: 71% 50%;
+    -webkit-mask-image: linear-gradient(#000 62%, transparent 100%); mask-image: linear-gradient(#000 62%, transparent 100%);
+  }
+}
+.scrub__canvas { -webkit-transform: translateZ(0); transform: translateZ(0); } /* own layer on iOS: no repaint flashes */
+
+/* legibility scrims */
+.scrub__shade {
+  position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(11,11,12,.55) 0%, transparent 18%),
+    linear-gradient(0deg, var(--ink) 0%, rgba(11,11,12,.85) 30%, rgba(11,11,12,.2) 52%, transparent 62%);
+}
+@media (min-width: 768px) {
+  .scrub__shade {
+    background:
+      linear-gradient(180deg, rgba(11,11,12,.6) 0%, transparent 20%),
+      linear-gradient(0deg, var(--ink) 0%, transparent 22%),
+      linear-gradient(90deg, rgba(11,11,12,.88) 0%, rgba(11,11,12,.62) 32%, rgba(11,11,12,.1) 58%, transparent 70%);
+  }
+}
+
+/* ---------- Beats (text moments) ---------- */
+.beat {
+  position: absolute; inset: 0; left: 0; right: 0;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding-top: calc(var(--hdr-h) + 2rem); padding-bottom: 5.25rem;
+  opacity: 0; pointer-events: none; will-change: opacity, transform;
+}
+.beat > * { max-width: 40rem; }
+@media (min-width: 1100px) { .beat > * { max-width: 34rem; } .beat .hero__title { font-size: clamp(3.5rem, 2rem + 3.6vw, 5.25rem); } }
+.beat.is-on { pointer-events: auto; }
+.beat--intro { opacity: 1; }
+@media (min-width: 768px) {
+  .beat { justify-content: center; padding-bottom: 4rem; }
+}
+
+.beat .tag { margin-bottom: 1.25rem; }
+.beat .hero__title { margin-bottom: 1.25rem; }
+.beat .hero__lede { margin-bottom: 1.75rem; color: #c6c8cb; }
+.beat .hero__ctas { margin-bottom: 0; }
+@media (max-width: 767px) {
+  .beat--intro .tag { display: none; }
+  .beat .hero__lede { font-size: .9375rem; margin-bottom: 1.25rem; }
+  .beat .hero__ctas { display: grid; grid-template-columns: 1fr 1fr; gap: .625rem; }
+  .beat .hero__ctas .btn { padding-inline: .75rem; font-size: .75rem; letter-spacing: .05em; }
+  .beat--close .hero__ctas .btn--gold .i { display: none; }
+}
+@media (max-width: 767px) and (max-height: 700px) {
+  .beat .hero__lede { display: none; }
+}
+
+.beat__h {
+  font-family: var(--serif); font-weight: 400; letter-spacing: -.02em; line-height: 1.06;
+  font-size: clamp(2.25rem, 1.4rem + 4vw, 4.75rem); text-wrap: balance; margin-bottom: 1.5rem;
+}
+.beat__h em { color: var(--champ); font-style: italic; }
+.beat__sub { color: #c6c8cb; font-size: clamp(1rem, .95rem + .3vw, 1.125rem); line-height: 1.65; max-width: 30rem; margin-bottom: 1.75rem; }
+
+.beat__stats {
+  display: grid; grid-template-columns: 1fr 1fr; max-width: 34rem;
+  border: 1px solid rgba(236,236,236,.12); border-radius: var(--r-md);
+  background: rgba(11,11,12,.55); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
+.beat__stats div { padding: 1rem 1.125rem; }
+.beat__stats div:nth-child(odd) { border-right: 1px solid rgba(236,236,236,.1); }
+.beat__stats div:nth-child(-n+2) { border-bottom: 1px solid rgba(236,236,236,.1); }
+.beat__stats dt { font-size: .6875rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.beat__stats dd {
+  display: flex; align-items: baseline; gap: .4rem; margin-top: .25rem;
+  font-family: var(--serif); font-size: clamp(2rem, 1.6rem + 1.6vw, 2.75rem); line-height: 1.1; color: var(--gold-hi);
+  font-variant-numeric: tabular-nums;
+}
+.beat__stats small { font-family: var(--mono); font-size: .75rem; color: var(--champ); letter-spacing: .04em; }
+
+/* ---------- HUD ---------- */
+.scrub__hud {
+  position: absolute; left: 0; right: 0; bottom: 1.25rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem; pointer-events: none;
+}
+.scrub__hint { display: none; align-items: center; gap: .75rem; color: var(--muted-2); font-size: .6875rem; letter-spacing: .2em; text-transform: uppercase; transition: opacity 400ms ease; }
+.scrub.is-moving .scrub__hint { opacity: 0; }
+.scrub__mouse {
+  position: relative; width: 18px; height: 28px; border: 1.5px solid rgba(236,236,236,.5); border-radius: 10px;
+}
+.scrub__mouse::after {
+  content: ""; position: absolute; left: 50%; top: 5px; width: 2px; height: 6px; margin-left: -1px;
+  border-radius: 2px; background: var(--gold); animation: mouseWheel 1.6s var(--ease) infinite;
+}
+@keyframes mouseWheel { 0% { opacity: 0; transform: translateY(-2px); } 30% { opacity: 1; } 100% { opacity: 0; transform: translateY(9px); } }
+@media (hover: hover) and (pointer: fine) { .scrub__hint { display: inline-flex; } }
+
+.scrub__meter { display: flex; align-items: center; gap: .75rem; margin-left: auto; }
+.scrub__meter .mono { font-size: .6875rem; color: var(--muted-2); letter-spacing: .1em; font-variant-numeric: tabular-nums; }
+.scrub__bar { position: relative; width: 96px; height: 2px; background: rgba(236,236,236,.15); border-radius: 2px; overflow: hidden; }
+.scrub__bar span { position: absolute; inset: 0; background: linear-gradient(90deg, var(--gold), var(--champ)); transform: scaleX(0); transform-origin: left; }
+@media (min-width: 768px) { .scrub__bar { width: 160px; } }
+
+/* preload progress (top hairline) */
+.scrub__loader { position: absolute; left: 0; right: 0; top: 0; height: 2px; z-index: 3; transition: opacity 600ms ease; }
+.scrub__loader span { display: block; height: 100%; width: 100%; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 200ms linear; }
+.scrub__loader.is-done { opacity: 0; }
+
+/* ---------- Booking (moved out of hero) ---------- */
+.booking { position: relative; padding-block: 1rem clamp(3rem, 2rem + 3vw, 5rem); background: var(--ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  .scrub__mouse::after { animation: none; }
+}

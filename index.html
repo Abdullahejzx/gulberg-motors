@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0b0c" />
+  <meta name="description" content="Gulberg Motors — chauffeur-driven and self-drive luxury SUVs delivered to your residence, hotel or terminal across Lahore in under 120 minutes." />
+  <title>Gulberg Motors — Luxury SUV Rentals, Lahore</title>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230b0b0c' stroke='%235f6166' stroke-width='3'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Georgia,serif' font-size='24' fill='%23d6d8db'%3EGM%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,800;0,900;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="assets/hero-frames/f001.jpg" fetchpriority="high" />
+  <script>
+    /* Always open on the hero: drop any #section from the URL and stop the browser
+       restoring an old scroll position (Safari/Chrome do this on reload/back). Runs before render. */
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+    window.scrollTo(0, 0);
+    addEventListener("pageshow", function () { window.scrollTo(0, 0); });
+  </script>
+  <link rel="stylesheet" href="styles.css?v=11" />
+  <link rel="stylesheet" href="motion.css?v=11" />
+  <link rel="stylesheet" href="scrub.css?v=12" />
+  <link rel="stylesheet" href="refresh.css?v=8" />
+  <link rel="stylesheet" href="hero-type.css?v=2" />
+</head>
+<body>
+
+<!-- ============ ICON SPRITE ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+    <symbol id="i-cal-back" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="m9 16 2 2 4-4"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-id" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><circle cx="8" cy="12" r="2"/><path d="M14 10h4M14 14h4"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></symbol>
+    <symbol id="i-verified" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-arrow-ur" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+    <symbol id="i-monogram" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#0e0e0f" stroke="#5f6166" stroke-width="2"/><text x="24" y="30.5" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-size="17" font-weight="500" fill="#d6d8db" stroke="none">GM</text></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="hdr" id="hdr">
+  <div class="hdr__bar wrap">
+    <a href="#top" class="brand glass" aria-label="Gulberg Motors — home">
+      <svg class="brand__mark" aria-hidden="true"><use href="#i-monogram"/></svg>
+      <span class="brand__txt">
+        <span class="brand__name">Gulberg Motors</span>
+        <span class="brand__sub">Lahore Atelier</span>
+      </span>
+    </a>
+
+    <nav class="hdr__nav glass" aria-label="Primary">
+      <span class="hdr__ind" aria-hidden="true"></span>
+      <a href="#top" class="hdr__home" data-nav aria-label="Home"><svg class="i"><use href="#i-home"/></svg></a>
+      <a href="#fleet" data-nav>Fleet</a>
+      <a href="#experience" data-nav>Experience</a>
+      <a href="#delivery" data-nav>Delivery</a>
+      <a href="#reviews" data-nav>Reviews</a>
+      <a href="#contact" data-nav>Contact</a>
+    </nav>
+
+    <div class="hdr__right glass">
+      <a class="btn btn--sm hdr__cta" href="#book">Reserve Now</a>
+      <a class="icon-btn hdr__call" href="tel:+924235758890" aria-label="Call concierge">
+        <svg class="i"><use href="#i-phone"/></svg>
+      </a>
+      <button class="icon-btn hdr__menu" id="menuBtn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open menu">
+        <svg class="i"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="drawer" id="drawer" hidden>
+  <div class="drawer__inner wrap">
+    <div class="drawer__top">
+      <span class="eyebrow">Menu</span>
+      <button class="icon-btn" id="menuClose" type="button" aria-label="Close menu">
+        <svg class="i"><use href="#i-x"/></svg>
+      </button>
+    </div>
+    <nav class="drawer__nav" aria-label="Mobile">
+      <a href="#fleet"><span class="mono">01</span>Fleet</a>
+      <a href="#experience"><span class="mono">02</span>Experience</a>
+      <a href="#delivery"><span class="mono">03</span>Delivery</a>
+      <a href="#reviews"><span class="mono">04</span>Reviews</a>
+      <a href="#contact"><span class="mono">05</span>Contact</a>
+    </nav>
+    <div class="drawer__foot">
+      <a class="btn btn--gold btn--block" href="#book">Reserve Now <svg class="i"><use href="#i-arrow"/></svg></a>
+      <div class="drawer__row">
+        <a class="btn btn--ghost" href="tel:+924235758890"><svg class="i"><use href="#i-phone"/></svg> Call</a>
+        <a class="btn btn--ghost" href="https://wa.me/924235758890" target="_blank" rel="noopener noreferrer"><svg class="i"><use href="#i-chat"/></svg> WhatsApp</a>
+      </div>
+      <p class="mono muted small">24/7 · Pavilion Suites, MM Alam Road</p>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ============ 1. HERO — scroll-scrubbed frame sequence ============ -->
+  <section class="scrub" id="top" aria-label="Toyota Land Cruiser LC300 — scroll to drive">
+    <div class="scrub__sticky">
+      <canvas class="scrub__canvas" id="scrubCanvas" aria-hidden="true"></canvas>
+      <img class="scrub__poster" src="assets/hero-frames/f001.jpg" alt="" width="1280" height="720" fetchpriority="high" aria-hidden="true" />
+      <div class="scrub__shade" aria-hidden="true"></div>
+
+      <!-- Beat 1: intro -->
+      <div class="beat beat--intro wrap" data-beat="0 0.34">
+        <p class="chapter">Chapter 01 — The Arrival</p>
+        <h1 class="display">Lahore Road’s <span class="grad">your rules.</span></h1>
+        <p class="hero__lede display-lede">
+          Chauffeur-driven &amp; bespoke self-drive luxury SUVs delivered to your residence, private terminal or hotel across Lahore in under 120&nbsp;minutes.
+        </p>
+        <div class="hero__ctas">
+          <a class="btn btn--chrome" href="#book">Reserve now <svg class="i"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--ghost" href="#fleet">View fleet</a>
+        </div>
+      </div>
+
+      <!-- Beat 2: specs -->
+      <div class="beat beat--specs wrap" data-beat="0.38 0.68" aria-hidden="true">
+        <p class="chapter">Chapter 02 — The Machine</p>
+        <p class="display display--md">Built for the Karakoram. <span class="grad">Tailored for Gulberg.</span></p>
+        <dl class="beat__stats">
+          <div><dt>Power</dt><dd><span data-tick="409">409</span><small>HP</small></dd></div>
+          <div><dt>0–100 km/h</dt><dd><span data-tick="6.7" data-dec="1">6.7</span><small>s</small></dd></div>
+          <div><dt>Engine</dt><dd>3.5<small>L V6 TT</small></dd></div>
+          <div><dt>Seats</dt><dd><span data-tick="7">7</span><small>Full-time 4WD</small></dd></div>
+        </dl>
+      </div>
+
+      <!-- Beat 3: close -->
+      <div class="beat beat--close wrap" data-beat="0.74 1.01" aria-hidden="true">
+        <p class="chapter">Chapter 03 — Your Door</p>
+        <p class="display display--md">At your door in <span class="grad">120 minutes.</span></p>
+        <p class="beat__sub display-lede">Fuelled, detailed and handed over by a white-glove concierge — anywhere in Lahore.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--chrome" href="#book">Check availability <svg class="i"><use href="#i-key"/></svg></a>
+          <a class="btn btn--ghost" href="https://wa.me/924235758890" target="_blank" rel="noopener noreferrer"><svg class="i gold"><use href="#i-chat"/></svg> WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- HUD -->
+      <div class="scrub__hud wrap" aria-hidden="true">
+        <span class="scrub__hint mono"><span class="scrub__mouse"></span>Scroll to drive</span>
+        <div class="scrub__meter">
+          <span class="mono" id="scrubCount">001 / 300</span>
+          <span class="scrub__bar"><span id="scrubBar"></span></span>
+        </div>
+      </div>
+      <div class="scrub__loader" id="scrubLoader" aria-hidden="true"><span></span></div>
+    </div>
+  </section>
+
+  <!-- ============ BOOKING ============ -->
+  <section class="booking" aria-label="Reserve a vehicle">
+    <div class="wrap">
+      <!-- Booking -->
+      <form class="book reveal" id="book" novalidate>
+        <div class="book__head">
+          <h2 class="book__title">Reserve in under a minute</h2>
+          <p class="muted small">We confirm on WhatsApp — no payment needed now.</p>
+        </div>
+        <div class="book__grid">
+          <div class="field field--wide">
+            <label for="f-addr"><svg class="i"><use href="#i-pin"/></svg> Delivery address</label>
+            <input id="f-addr" name="address" type="text" autocomplete="street-address" placeholder="DHA Phase 5 / MM Alam / Airport" value="Gulberg III, Lahore" required />
+          </div>
+          <div class="field">
+            <label for="f-pick"><svg class="i"><use href="#i-cal"/></svg> Pick-up</label>
+            <input id="f-pick" name="pickup" type="datetime-local" required />
+          </div>
+          <div class="field">
+            <label for="f-ret"><svg class="i"><use href="#i-cal-back"/></svg> Return</label>
+            <input id="f-ret" name="return" type="datetime-local" required aria-describedby="f-ret-err" />
+          </div>
+          <div class="field">
+            <label for="f-car"><svg class="i"><use href="#i-car"/></svg> Vehicle</label>
+            <div class="select">
+              <select id="f-car" name="vehicle">
+                <option value="Concierge recommendation">Any — concierge recommends</option>
+                <option>Toyota Land Cruiser LC300 GR Sport</option>
+                <option>Range Rover Autobiography LWB</option>
+                <option>Porsche Cayenne Turbo</option>
+                <option>BMW X7 xDrive40i M-Sport</option>
+                <option>GWM Tank 500 Luxury Hybrid</option>
+                <option>Executive Diplomatic Flotilla (B6 Armored)</option>
+              </select>
+              <svg class="i" aria-hidden="true"><use href="#i-down"/></svg>
+            </div>
+          </div>
+          <div class="field field--mode" role="radiogroup" aria-label="Driving mode">
+            <span class="lbl-plain">Mode</span>
+            <div class="seg">
+              <label><input type="radio" name="mode" value="Chauffeur" checked /><span>Chauffeur</span></label>
+              <label><input type="radio" name="mode" value="Self-drive" /><span>Self-drive</span></label>
+            </div>
+          </div>
+          <button class="btn btn--gold book__submit" type="submit">
+            Check Availability <svg class="i"><use href="#i-key"/></svg>
+          </button>
+        </div>
+        <p class="book__msg" id="f-ret-err" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ 2. MARQUEE ============ -->
+  <div class="marquee" aria-label="Marques in our fleet">
+    <div class="marquee__track">
+      <ul>
+        <li>Land Cruiser</li><li>GWM Tank</li><li>Range Rover</li><li>Porsche Cayenne</li>
+        <li>BMW X7</li><li>Lexus LX600</li><li>Cadillac Escalade</li><li>Mercedes-Benz GLE</li>
+      </ul>
+      <ul aria-hidden="true">
+        <li>Land Cruiser</li><li>GWM Tank</li><li>Range Rover</li><li>Porsche Cayenne</li>
+        <li>BMW X7</li><li>Lexus LX600</li><li>Cadillac Escalade</li><li>Mercedes-Benz GLE</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============ 3. FLEET ============ -->
+  <section class="section wrap fleet" id="fleet">
+    <div class="sec-head sec-head--split">
+      <div class="reveal">
+        <span class="eyebrow">Curated Fleet</span>
+        <h2 class="h-xl">Command the Avenue.</h2>
+      </div>
+      <div class="chips reveal" role="group" aria-label="Filter fleet">
+        <button class="chip is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" type="button" data-filter="fullsize" aria-pressed="false">Full-Size SUV</button>
+        <button class="chip" type="button" data-filter="quiet" aria-pressed="false">Quiet Luxury</button>
+        <button class="chip" type="button" data-filter="offroad" aria-pressed="false">Off-Road 4WD</button>
+        <button class="chip" type="button" data-filter="seven" aria-pressed="false">7-Seater</button>
+      </div>
+    </div>
+
+    <div class="fleet__track" id="fleetTrack">
+      <!-- Featured -->
+      <article class="car car--feature reveal" data-cat="fullsize offroad seven" data-price="PKR 65,000">
+        <div class="car__media">
+          <figure class="tile tile--main">
+            <img src="assets/land-cruiser-lc300.webp" alt="Toyota Land Cruiser LC300 GR Sport parked outside a Gulberg residence on an overcast day" width="1600" height="893" style="object-position:50% 62%" loading="lazy" />
+            <span class="pill pill--live"><span class="dot dot--live"></span>Available now</span>
+            <span class="pill pill--right mono">B6 Armored Ready</span>
+          </figure>
+        </div>
+        <div class="car__info">
+          <span class="car__logo" aria-hidden="true">LC</span>
+          <div class="car__meta">
+            <h3 class="car__name">Toyota Land Cruiser LC300 GR Sport</h3>
+            <p class="car__sub"><span class="car__cat">Atelier Flagship · </span>PKR 65,000 / day</p>
+          </div>
+          <button class="car__go" type="button" data-reserve="Toyota Land Cruiser LC300 GR Sport" aria-label="Reserve Toyota Land Cruiser LC300 GR Sport"><svg class="i"><use href="#i-arrow-ur"/></svg></button>
+        </div>
+      </article>
+
+      <article class="car reveal" data-cat="fullsize quiet offroad" data-price="PKR 95,000">
+        <div class="car__media">
+          <figure class="tile tile--main">
+            <img src="assets/range-rover.webp" alt="Range Rover Autobiography on a foggy MM Alam Road, Gulberg" width="1194" height="1600" style="object-position:50% 68%" loading="lazy" />
+            <span class="pill pill--live"><span class="dot dot--live"></span>Available now</span>
+          </figure>
+        </div>
+        <div class="car__info">
+          <span class="car__logo" aria-hidden="true">RR</span>
+          <div class="car__meta">
+            <h3 class="car__name">Range Rover Autobiography LWB</h3>
+            <p class="car__sub"><span class="car__cat">Quiet Luxury · </span>PKR 95,000 / day</p>
+          </div>
+          <button class="car__go" type="button" data-reserve="Range Rover Autobiography LWB" aria-label="Reserve Range Rover Autobiography LWB"><svg class="i"><use href="#i-arrow-ur"/></svg></button>
+        </div>
+      </article>
+
+      <article class="car reveal" data-cat="quiet" data-price="PKR 75,000">
+        <div class="car__media">
+          <figure class="tile tile--main">
+            <img src="assets/porsche-cayenne.webp" alt="Porsche Cayenne on a rain-washed driveway in DHA" width="1600" height="1194" style="object-position:52% 62%" loading="lazy" />
+            <span class="pill pill--live"><span class="dot dot--live"></span>Available now</span>
+          </figure>
+        </div>
+        <div class="car__info">
+          <span class="car__logo" aria-hidden="true">P</span>
+          <div class="car__meta">
+            <h3 class="car__name">Porsche Cayenne Turbo</h3>
+            <p class="car__sub"><span class="car__cat">Performance · </span>PKR 75,000 / day</p>
+          </div>
+          <button class="car__go" type="button" data-reserve="Porsche Cayenne Turbo" aria-label="Reserve Porsche Cayenne Turbo"><svg class="i"><use href="#i-arrow-ur"/></svg></button>
+        </div>
+      </article>
+
+      <article class="car reveal" data-cat="fullsize quiet seven" data-price="PKR 60,000">
+        <div class="car__media">
+          <figure class="tile tile--main">
+            <img src="assets/bmw-x7.webp" alt="BMW X7 at a misty Liberty Roundabout, Lahore" width="1600" height="1194" style="object-position:40% 65%" loading="lazy" />
+            <span class="pill pill--live"><span class="dot dot--live"></span>Available now</span>
+          </figure>
+        </div>
+        <div class="car__info">
+          <span class="car__logo" aria-hidden="true">X7</span>
+          <div class="car__meta">
+            <h3 class="car__name">BMW X7 xDrive40i M-Sport</h3>
+            <p class="car__sub"><span class="car__cat">7-Seat Luxury · </span>PKR 60,000 / day</p>
+          </div>
+          <button class="car__go" type="button" data-reserve="BMW X7 xDrive40i M-Sport" aria-label="Reserve BMW X7 xDrive40i M-Sport"><svg class="i"><use href="#i-arrow-ur"/></svg></button>
+        </div>
+      </article>
+
+      <article class="car reveal" data-cat="offroad seven" data-price="PKR 45,000">
+        <div class="car__media">
+          <figure class="tile tile--main">
+            <img src="assets/gwm-tank-500.webp" alt="GWM Tank 500 on a misty driveway outside a Lahore residence" width="1600" height="1194" style="object-position:35% 60%" loading="lazy" />
+            <span class="pill pill--live"><span class="dot dot--live"></span>Available now</span>
+          </figure>
+        </div>
+        <div class="car__info">
+          <span class="car__logo" aria-hidden="true">T5</span>
+          <div class="car__meta">
+            <h3 class="car__name">GWM Tank 500 Luxury Hybrid</h3>
+            <p class="car__sub"><span class="car__cat">Off-Road Hybrid · </span>PKR 45,000 / day</p>
+          </div>
+          <button class="car__go" type="button" data-reserve="GWM Tank 500 Luxury Hybrid" aria-label="Reserve GWM Tank 500 Luxury Hybrid"><svg class="i"><use href="#i-arrow-ur"/></svg></button>
+        </div>
+      </article>
+    </div>
+
+    <!-- Mobile carousel controls -->
+    <div class="fleet__ctrl" aria-hidden="false">
+      <span class="mono muted" id="fleetCount" aria-live="polite">1 / 5</span>
+      <div class="fleet__btns">
+        <button class="icon-btn icon-btn--soft" type="button" id="fleetPrev" aria-label="Previous vehicle"><svg class="i"><use href="#i-left"/></svg></button>
+        <button class="icon-btn icon-btn--soft" type="button" id="fleetNext" aria-label="Next vehicle"><svg class="i"><use href="#i-right"/></svg></button>
+      </div>
+    </div>
+    <p class="fleet__empty muted" id="fleetEmpty" hidden>No vehicles in this category right now — <a class="link" href="https://wa.me/924235758890" target="_blank" rel="noopener noreferrer">ask the concierge</a>.</p>
+  </section>
+
+  <!-- ============ 4. STATS ============ -->
+  <section class="stats">
+    <div class="wrap stats__grid">
+      <div class="stat reveal"><span class="stat__num" data-count="10">10</span><span class="lbl">Premium registered fleet vehicles</span></div>
+      <div class="stat reveal"><span class="stat__num champ"><span data-count="2">2</span> hrs</span><span class="lbl">Average white-glove handover</span></div>
+      <div class="stat reveal"><span class="stat__num" data-count="3">3</span><span class="lbl">Cities — Lahore, Islamabad, Murree</span></div>
+      <div class="stat reveal"><span class="stat__num champ">5.0<svg class="i i--fill" aria-hidden="true"><use href="#i-star"/></svg></span><span class="lbl">Client satisfaction rating</span></div>
+    </div>
+  </section>
+
+  <!-- ============ 5. EXPERIENCE (LIMESTONE) ============ -->
+  <section class="lime" id="experience">
+    <div class="wrap lime__grid">
+      <div class="lime__copy">
+        <div class="reveal">
+          <span class="eyebrow eyebrow--dark">Lahore Concierge Protocol</span>
+          <h2 class="h-xl">Not just a rental. <em>An experience.</em></h2>
+          <p class="lime__lede">Gulberg Motors was founded to eliminate the compromises of traditional car rental in Pakistan. Every vehicle arrives spotless, fuelled, and tailored to your protocol requirements.</p>
+        </div>
+        <ol class="services">
+          <li class="reveal"><span class="mono">01</span><div><strong>Self-Drive Rental</strong>Full autonomy with 24/7 telematics, remote support &amp; roadside concierge across Punjab.</div></li>
+          <li class="reveal"><span class="mono">02</span><div><strong>Chauffeur Protocol</strong>Uniformed, vetted executive chauffeurs trained in diplomatic courtesy and route security.</div></li>
+          <li class="reveal"><span class="mono">03</span><div><strong>Wedding &amp; Gala Flotilla</strong>Coordinated multi-SUV black-tie convoys with discreet floral styling and escort vehicles.</div></li>
+          <li class="reveal"><span class="mono">04</span><div><strong>Airport VIP Transfers</strong>Curbside greeting and luggage handling at Allama Iqbal International Airport (LHE).</div></li>
+          <li class="reveal"><span class="mono">05</span><div><strong>Outstation Expeditions</strong>Pre-serviced for motorway journeys to Islamabad, Rawalpindi &amp; Murree with e-tag coverage.</div></li>
+          <li class="reveal"><span class="mono">06</span><div><strong>Corporate Executive Lease</strong>Flexible 30 to 180-day arrangements for MNCs, visiting ambassadors and production suites.</div></li>
+        </ol>
+      </div>
+      <figure class="lime__figure reveal">
+        <img src="assets/chauffeur-handover.jpg" alt="Chauffeur handing over SUV keys at a private villa" width="1200" height="896" loading="lazy" />
+        <figcaption>
+          <span class="mono champ">MM Alam Road Atelier</span>
+          White-glove handover at private residences across Gulberg, DHA and Model Town.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 6. HOW IT WORKS ============ -->
+  <section class="section wrap" id="delivery">
+    <div class="sec-head sec-head--center reveal">
+      <span class="eyebrow">Seamless Acquisition</span>
+      <h2 class="h-xl">Effortless four-stage dispatch</h2>
+    </div>
+    <ol class="steps">
+      <li class="step reveal"><span class="step__num">01</span><div><h3>Choose your vehicle</h3><p>Browse real-time fleet availability with upfront pricing in PKR and zero concealed surcharges.</p></div></li>
+      <li class="step reveal"><span class="step__num">02</span><div><h3>Tell us where</h3><p>Share your live pin or villa address in Gulberg, DHA, Cantt or Model Town via WhatsApp.</p></div></li>
+      <li class="step reveal"><span class="step__num">03</span><div><h3>White-glove delivery</h3><p>Your SUV arrives detailed, sanitised, fully fuelled and ready for departure.</p></div></li>
+      <li class="step reveal"><span class="step__num">04</span><div><h3>Drive &amp; return</h3><p>Enjoy Punjab without limits; we collect from your location, terminal or private estate.</p></div></li>
+    </ol>
+  </section>
+
+  <!-- ============ 7. COLLAGE ============ -->
+  <section class="collage">
+    <div class="wrap">
+      <div class="sec-head sec-head--split reveal">
+        <div>
+          <span class="eyebrow">Lahore Chronicles</span>
+          <h2 class="h-lg">Fog season in the heart of Punjab</h2>
+        </div>
+        <span class="mono muted coords">31.5204° N, 74.3587° E</span>
+      </div>
+      <div class="collage__grid">
+        <figure class="shot shot--big reveal">
+          <img src="assets/land-cruiser-lc300.webp" alt="Land Cruiser LC300 outside a Gulberg III residence" width="1600" height="893" style="object-position:25% 50%" loading="lazy" />
+          <figcaption class="mono">[07:40 PKT] · Gulberg III</figcaption>
+        </figure>
+        <figure class="shot reveal">
+          <img src="assets/bmw-x7.webp" alt="BMW X7 at Liberty Roundabout" width="1600" height="1194" style="object-position:40% 65%" loading="lazy" />
+          <figcaption class="mono">[08:15 PKT] · Liberty</figcaption>
+        </figure>
+        <figure class="shot reveal">
+          <img src="assets/porsche-cayenne.webp" alt="Porsche Cayenne on DHA Phase 6 boulevard" width="1600" height="1194" style="object-position:52% 62%" loading="lazy" />
+          <figcaption class="mono">[09:05 PKT] · DHA Phase 6</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 8. PROTOCOL + FAQ ============ -->
+  <section class="section wrap protocol">
+    <div class="protocol__col">
+      <div class="reveal">
+        <span class="eyebrow">Seamless Verification</span>
+        <h2 class="h-lg">Client protocol</h2>
+        <p class="muted">Simple, rapid verification crafted for executives and visiting dignitaries.</p>
+      </div>
+      <ul class="reqs">
+        <li class="req reveal"><svg class="i gold"><use href="#i-shield"/></svg><div><h3>Valid CNIC or passport</h3><p>Original CNIC for residents, or passport with entry visa for foreign delegations.</p></div></li>
+        <li class="req reveal"><svg class="i gold"><use href="#i-id"/></svg><div><h3>Driver’s licence</h3><p>Valid domestic licence or International Driving Permit (2+ years) for self-drive.</p></div></li>
+        <li class="req reveal"><svg class="i gold"><use href="#i-wallet"/></svg><div><h3>Refundable deposit</h3><p>Via bank transfer or major card, refunded immediately on check-in inspection.</p></div></li>
+      </ul>
+    </div>
+
+    <div class="protocol__col protocol__col--wide">
+      <div class="reveal">
+        <span class="eyebrow">Inquiries</span>
+        <h2 class="h-lg">Frequently answered</h2>
+      </div>
+      <div class="faq">
+        <details class="reveal" open>
+          <summary>Can I drive to Islamabad or the Northern areas?<svg class="i"><use href="#i-down"/></svg></summary>
+          <p>Yes. Every SUV is cleared for the M-2 and M-3 motorways with e-tag toll clearance pre-installed. For Murree or Bhurban, all 4WD systems pass an altitude check before handover.</p>
+        </details>
+        <details class="reveal">
+          <summary>What is included with chauffeur service?<svg class="i"><use href="#i-down"/></svg></summary>
+          <p>Standard shifts run 12 continuous hours with a uniformed, bilingual chauffeur trained in protocol security. Fuel packages and overtime are calculated transparently.</p>
+        </details>
+        <details class="reveal">
+          <summary>How quickly can a car be delivered in Gulberg?<svg class="i"><use href="#i-down"/></svg></summary>
+          <p>Average delivery to Gulberg, Cavalry Ground, Cantt and Main Boulevard is under 60 minutes. DHA Phases 1–8 are typically serviced within 90 to 120 minutes.</p>
+        </details>
+        <details class="reveal">
+          <summary>Do you offer security escorts (VIP protocol)?<svg class="i"><use href="#i-down"/></svg></summary>
+          <p>Yes. Vetted protocol guards and escort chase vehicles can be coordinated with 12 hours’ advance clearance.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 9. REVIEWS ============ -->
+  <section class="reviews" id="reviews">
+    <div class="wrap reviews__grid">
+      <div class="rating reveal">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <svg class="i i--fill"><use href="#i-star"/></svg><svg class="i i--fill"><use href="#i-star"/></svg><svg class="i i--fill"><use href="#i-star"/></svg><svg class="i i--fill"><use href="#i-star"/></svg><svg class="i i--fill"><use href="#i-star"/></svg>
+        </div>
+        <span class="rating__num">5.0</span>
+        <span class="lbl">Google rating · 120+ client reviews</span>
+        <div class="rating__badge">
+          <svg class="i gold"><use href="#i-verified"/></svg>
+          <div><strong>Official Protocol Partner</strong><span class="mono muted">Diplomatic &amp; executive fleet</span></div>
+        </div>
+      </div>
+      <figure class="quote reveal">
+        <blockquote>“Gulberg Motors delivered an immaculate LC300 to our residence in DHA within 90 minutes of landing in Lahore. The chauffeur’s discretion and effortless booking via WhatsApp set a standard Pakistan hasn’t seen before.”</blockquote>
+        <figcaption>
+          <span class="avatar" aria-hidden="true">MR</span>
+          <span><strong>Mian Tariq Rafique</strong><span class="lbl gold">Private Family Office, Lahore</span></span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 10. CTA ============ -->
+  <section class="section wrap" id="contact">
+    <div class="cta reveal">
+      <span class="eyebrow">Private Aviation &amp; Estate Dispatch</span>
+      <h2 class="h-xl">Your journey starts on MM&nbsp;Alam&nbsp;Road.</h2>
+      <p>Speak directly with our Chief Dispatcher to reserve your Land Cruiser, Range Rover or diplomatic escort in minutes.</p>
+      <div class="cta__btns">
+        <a class="btn btn--gold" href="https://wa.me/924235758890" target="_blank" rel="noopener noreferrer"><svg class="i"><use href="#i-chat"/></svg> Instant WhatsApp Concierge</a>
+        <a class="btn btn--ghost mono-btn" href="tel:+924235758890"><svg class="i gold"><use href="#i-phone"/></svg> +92 42 3575 8890</a>
+      </div>
+      <span class="mono muted small">Average response &lt; 3 minutes · 24/7</span>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr__grid">
+      <div class="ftr__brand">
+        <a href="#top" class="brand" aria-label="Gulberg Motors — back to top">
+          <svg class="brand__mark" aria-hidden="true"><use href="#i-monogram"/></svg>
+          <span class="brand__txt"><span class="brand__name">Gulberg Motors</span><span class="brand__sub">Lahore Atelier</span></span>
+        </a>
+        <p class="muted small">Haute horlogerie precision meets bespoke automotive prestige. Ultra-exclusive SUV and grand tourer fleet for distinguished clients and visiting delegations.</p>
+        <a class="link" href="https://wa.me/924235758890" target="_blank" rel="noopener noreferrer"><svg class="i"><use href="#i-chat"/></svg> WhatsApp Private Concierge</a>
+      </div>
+      <div>
+        <h3 class="ftr__h">Lahore Atelier</h3>
+        <address>
+          <span class="ink">Pavilion Suites, MM Alam Road</span>
+          Gulberg III, Lahore 54660<br />Punjab, Pakistan
+        </address>
+        <p class="ftr__hours"><svg class="i gold"><use href="#i-clock"/></svg><span class="mono">24/7 by appointment</span></p>
+      </div>
+      <div>
+        <h3 class="ftr__h">Bespoke Fleet</h3>
+        <ul class="ftr__links">
+          <li><a href="#fleet">Armored B6 Sentinel Series</a></li>
+          <li><a href="#fleet">Range Rover Autobiography LWB</a></li>
+          <li><a href="#fleet">Mercedes-Maybach GLS 600</a></li>
+          <li><a href="#fleet">Cadillac Escalade ESV</a></li>
+          <li><a href="#fleet">Rolls-Royce Cullinan Series II</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="ftr__h">Direct Inquiries</h3>
+        <dl class="ftr__dl">
+          <div><dt>Reservations desk</dt><dd><a class="mono ink" href="tel:+924235758890">+92 42 3575 8890</a></dd></div>
+          <div><dt>Private aviation transfers</dt><dd>Allama Iqbal Intl. (LHE) VIP Ramp</dd></div>
+          <div><dt>Digital dispatch</dt><dd><a class="mono gold" href="mailto:atelier@gulbergmotors.pk">atelier@gulbergmotors.pk</a></dd></div>
+        </dl>
+      </div>
+    </div>
+    <div class="ftr__base">
+      <p>© <span id="yr">2026</span> Gulberg Motors Lahore. All rights reserved.</p>
+      <nav aria-label="Legal"><a href="#experience">Protocol Services</a><a href="#contact">Security Clearing</a><a href="#contact">Terms</a></nav>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp (top-right, stays through the whole scroll) -->
+<a class="wa-float" href="https://wa.me/924235758890?text=Hello%20Gulberg%20Motors%2C%20I%27d%20like%20to%20book%20a%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.04 3C9.06 3 3.4 8.63 3.4 15.58c0 2.22.59 4.4 1.7 6.31L3.3 28.5l6.8-1.77a12.7 12.7 0 0 0 5.94 1.5h.01c6.97 0 12.64-5.64 12.64-12.59C28.69 8.63 23.01 3 16.04 3Zm0 23.06h-.01a10.5 10.5 0 0 1-5.36-1.46l-.38-.23-4.04 1.05 1.08-3.92-.25-.4a10.4 10.4 0 0 1-1.6-5.52c0-5.77 4.71-10.47 10.57-10.47 5.82 0 10.53 4.7 10.53 10.47 0 5.78-4.72 10.48-10.54 10.48Zm5.78-7.84c-.32-.16-1.87-.92-2.16-1.02-.29-.11-.5-.16-.71.16-.21.31-.82 1.02-1 1.23-.18.21-.37.24-.69.08-.32-.16-1.33-.49-2.54-1.56-.94-.83-1.57-1.86-1.76-2.18-.18-.31-.02-.48.14-.64.14-.14.32-.37.48-.55.16-.18.21-.31.32-.52.1-.21.05-.39-.03-.55-.08-.16-.71-1.71-.98-2.34-.26-.61-.52-.53-.71-.54h-.61c-.21 0-.55.08-.84.39-.29.31-1.1 1.07-1.1 2.62 0 1.54 1.13 3.03 1.29 3.24.16.21 2.22 3.38 5.38 4.74.75.32 1.34.52 1.8.66.75.24 1.44.2 1.98.12.6-.09 1.87-.76 2.13-1.5.26-.73.26-1.36.18-1.5-.08-.13-.29-.21-.61-.37Z"/></svg>
+  <span class="wa-float__label">WhatsApp</span>
+</a>
+
+<!-- Mobile sticky action bar -->
+<div class="mbar" id="mbar">
+  <a class="mbar__btn" href="tel:+924235758890" aria-label="Call concierge"><svg class="i"><use href="#i-phone"/></svg><span>Call</span></a>
+  <a class="mbar__btn" href="https://wa.me/924235758890" target="_blank" rel="noopener noreferrer"><svg class="i"><use href="#i-chat"/></svg><span>WhatsApp</span></a>
+  <a class="btn btn--gold mbar__cta" href="#book">Reserve <svg class="i"><use href="#i-arrow"/></svg></a>
+</div>
+
+<script src="script.js?v=13" defer></script>
+<script src="scrub.js?v=12" defer></script>
+</body>
+</html>

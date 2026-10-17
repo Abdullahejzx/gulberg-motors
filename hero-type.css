@@ -1,0 +1,79 @@
+/* ==========================================================
+   Hero typography — editorial "chapter" style
+   Heavy high-contrast serif · spaced chapter label ·
+   chrome-gradient accent word · chrome pill CTA
+   ========================================================== */
+
+/* chapter label: small, wide-tracked, centred dash style */
+.chapter {
+  font-family: var(--sans); font-size: .8125rem; font-weight: 600;
+  letter-spacing: .32em; text-transform: uppercase;
+  color: #a7abb2; margin-bottom: 1.25rem;
+}
+
+/* the big serif */
+.display {
+  font-family: "Playfair Display", Georgia, serif; font-weight: 800;
+  font-size: clamp(3rem, 1.5rem + 6.2vw, 6.25rem);
+  line-height: .98; letter-spacing: -.035em;
+  color: #f4f5f7; text-wrap: balance; margin-bottom: 1.5rem;
+  font-feature-settings: "liga", "dlig", "kern";
+}
+.display--md { font-size: clamp(2.6rem, 1.4rem + 4.8vw, 5rem); }
+
+/* chrome gradient accent word (grey palette version of the reference) */
+.grad {
+  display: inline; font-style: normal;
+  background: linear-gradient(100deg, #ffffff 0%, #c9ccd1 22%, #7d828a 42%, #e9ebee 58%, #9aa0a8 78%, #ffffff 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  animation: chromeShift 7s ease-in-out infinite alternate;
+  padding-bottom: .06em; /* keeps descenders inside the clip */
+}
+@keyframes chromeShift { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
+
+/* softer sans lede like the reference */
+.display-lede {
+  font-family: var(--sans); font-weight: 400;
+  font-size: clamp(1rem, .95rem + .35vw, 1.1875rem) !important; line-height: 1.6 !important;
+  color: #9ea3ab !important; letter-spacing: .005em; max-width: 34rem;
+}
+
+/* chrome pill CTA */
+.btn--chrome {
+  min-height: 54px; padding: 0 1.75rem; border-radius: 999px; border: 0;
+  background: linear-gradient(100deg, #f7f8f9 0%, #d7dadf 45%, #b9bec5 100%);
+  color: #111214; font-size: .9375rem; font-weight: 600; letter-spacing: .01em; text-transform: none;
+  box-shadow: inset 0 1px 0 #fff, 0 10px 30px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.25);
+}
+.btn--chrome:hover { background: linear-gradient(100deg, #ffffff 0%, #e4e6ea 45%, #c8ccd2 100%); transform: translateY(-2px); }
+.btn--chrome .i { transition: transform 280ms var(--ease); }
+.btn--chrome:hover .i { transform: translateX(3px); }
+.beat .btn--ghost { text-transform: none; letter-spacing: .01em; font-size: .9375rem; min-height: 54px; padding: 0 1.6rem; }
+
+/* override the old beat headline sizes inside the hero */
+.beat .display { max-width: 14ch; }
+.beat .display--md { max-width: 13ch; }
+.beat--specs .beat__stats { margin-top: .5rem; }
+
+/* ---------- phones: centred, like the reference ---------- */
+@media (max-width: 767px) {
+  .beat { align-items: center; text-align: center; }
+  .beat > * { margin-left: auto; margin-right: auto; }
+  .chapter { font-size: .6875rem; letter-spacing: .28em; margin-bottom: .875rem; }
+  .display { font-size: clamp(2.6rem, 11.5vw, 3.4rem); margin-bottom: 1rem; }
+  .display--md { font-size: clamp(2.2rem, 10vw, 2.9rem); }
+  .beat .hero__ctas { justify-content: center; }
+  .beat .hero__ctas .btn { min-height: 50px; font-size: .875rem; letter-spacing: .01em; }
+  .beat__stats { text-align: left; }
+}
+@media (max-width: 767px) and (max-height: 700px) {
+  .display { font-size: clamp(2.2rem, 10vw, 2.8rem); }
+}
+
+/* spec numbers match the heavy headline */
+.beat__stats dd { font-weight: 800; letter-spacing: -.03em; color: #f4f5f7; }
+.scrub__meter .mono { white-space: nowrap; }
+
+@media (prefers-reduced-motion: reduce) { .grad { animation: none; } }
